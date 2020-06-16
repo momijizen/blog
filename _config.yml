@@ -59,7 +59,7 @@ plugins:
 
 author:
   name   : "ORAWAN M."
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio_photo.jpg"
   bio    : "I want to be a data scientist. keep fighting."
   links:
    # - label: "e-mail"
