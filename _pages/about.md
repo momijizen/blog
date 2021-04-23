@@ -2,7 +2,7 @@
 permalink: /about/
 title: "About"
 header:
-  image: "/assets/images//2_head.jpg"
+  image: "/assets/images/2_head.jpg"
 ---
 
 My name is **_ORAWAM MANGMEE_**, I have a passion for data science studying TensorFlow, Keras, Machine Learning, Deep Learning, etc. to become a data scientist.
