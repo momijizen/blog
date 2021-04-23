@@ -1,9 +1,11 @@
 ---
 permalink: /about/
 title: "About"
+header:
+  image: "/assets/images//2_head.jpg"
 ---
 
-My name is **_ORAWAM MANGMEE_**, I have a passion for data science and am studying TensorFlow, Keras, Machine Learning, Deep Learning, etc. to become a data scientist.
+My name is **_ORAWAM MANGMEE_**, I have a passion for data science studying TensorFlow, Keras, Machine Learning, Deep Learning, etc. to become a data scientist.
 
 After graduating from *Kasetsart University, Sriracha Campus*, Faculty of Computer Science I am working as a Java Programmer, it's a good job. But I feel myself stagnating as the world evolves and focuses on AI and machine learning.
 
