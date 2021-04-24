@@ -23,6 +23,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 github_username: momijizen
 minimal_mistakes_skin: contrast #mint #default
 search: true
+logo: "/assets/images/maple.png"
 
 # Build settings
 markdown: kramdown
@@ -60,7 +61,7 @@ plugins:
 author:
   name   : "ORAWAN M."
   avatar : "/assets/images/bio_photo.jpg"
-  bio    : "software developer||fiction reader||traveler"
+  bio    : "software developer/|fiction reader/|traveler"
   links:
     - label: "e-mail"
       icon: "fas fa-fw fa-link"
