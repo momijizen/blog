@@ -61,7 +61,7 @@ plugins:
 author:
   name   : "ORAWAN M."
   avatar : "/assets/images/bio_photo.jpg"
-  bio    : "software developer/|fiction reader/|traveler"
+  bio    : "software developer|*|fiction reader|*|traveler"
   links:
     - label: "e-mail"
       icon: "fas fa-fw fa-link"
