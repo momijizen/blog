@@ -6,14 +6,8 @@ tags:
   - Foursquare API
   - location data
 
-output:
-  html_document:
-    number_sections: no
-    toc: yes
-    toc_depth: 2
-  fontsize: 12pt
+output: html_document
 ---
-!![demographics map]('./Report_Clustering_Sub_District_Bangkok.html')
 
 <<insertHTML:[./Report_Clustering_Sub_District_Bangkok.html]
 
