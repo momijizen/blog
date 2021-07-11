@@ -1,6 +1,6 @@
 ---
 title: "Clustering sub-district in Bangkok, Thailand"
-my_html: Report_Clustering_Sub_District_Bangkok.html
+my_html: test.html
 categories:
   - Blog
 tags:
