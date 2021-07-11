@@ -1,0 +1,15 @@
+---
+title: "Clustering sub-district in Bangkok, Thailand"
+my_html: Report_Clustering_Sub_District_Bangkok.html
+categories:
+  - Blog
+tags:
+  - Foursquare API
+  - location data
+
+output: html_document
+---
+
+{% if page.my_html %}
+  {% include {{ page.my_html }} %}
+{% endif %}
