@@ -5,6 +5,13 @@ categories:
 tags:
   - Foursquare API
   - location data
+
+output:
+  html_document:
+    includes:
+      in_header: header.html
+      before_body: Report_Clustering_Sub_District_Bangkok.html
+      after_body: Report_Clustering_Sub_District_Bangkok.html
 ---
 
 <<insertHTML:[_posts\Report_Clustering_Sub_District_Bangkok.html]
