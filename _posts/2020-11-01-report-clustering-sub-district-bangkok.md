@@ -6,8 +6,6 @@ categories:
 tags:
   - Foursquare API
   - location data
-
-output: html_document
 ---
 
 {% if page.my_html %}
