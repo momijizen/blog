@@ -7,12 +7,12 @@ tags:
   - location data
 ---
 
-<<insertHTML:[2020-01-01-Report_Clustering_Sub_District_Bangkok.html]
+<<insertHTML:[Report_Clustering_Sub_District_Bangkok.html]
 
 etc, etc, etc
 
 ```{r, echo=FALSE}
-htmltools::includeHTML("2020-01-01-Report_Clustering_Sub_District_Bangkok.html")
+htmltools::includeHTML("Report_Clustering_Sub_District_Bangkok.html")
 ```
 
 etc, etc, etc
