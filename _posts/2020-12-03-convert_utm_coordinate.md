@@ -7,7 +7,7 @@ tags:
   - Polygon library
 ---
 
-* UTM (Universal Transverse Mercator) coordinates *
+## UTM (Universal Transverse Mercator) coordinates
 
 
 ```python
@@ -77,7 +77,7 @@ df_raw[['name_thai','coordinates_x','coordinates_y']].head()
 
 
 
-** Convert a UTM coordinate into latitude and longitude coordinates **
+## Convert a UTM coordinate into latitude and longitude coordinates
 
 
 ```python
@@ -120,7 +120,7 @@ df_lat_long.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -160,7 +160,7 @@ df_lat_long.head()
 
 
 
-*** Merge latitude and longitude columns ***
+*Merge latitude and longitude columns*
 
 
 ```python
@@ -185,7 +185,7 @@ df_station[['name_thai','coordinates_x','coordinates_y','longitude','latitude']]
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
