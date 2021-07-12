@@ -1,0 +1,14 @@
+---
+title: "Choropleth Map with Population Density of Bangkok"
+my_html: map_bangkok.html
+categories:
+  - Blog
+tags:
+  - choropleth map
+  - location data
+  - folium library
+---
+
+{% if page.my_html %}
+  {% include {{ page.my_html }} %}
+{% endif %}
