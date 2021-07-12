@@ -4,9 +4,8 @@ my_html: convet_utm_coordinates.html
 categories:
   - Blog
 tags:
-  - choropleth map
   - location data
-  - folium library
+  - Polygon library
 ---
 
 {% if page.my_html %}
