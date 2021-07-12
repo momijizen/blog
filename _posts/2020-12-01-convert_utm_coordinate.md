@@ -1,6 +1,6 @@
 ---
 title: "Convert a UTM Coordinate"
-my_html: convet_utm_coordinates.html
+my_html: convert_utm_coordinates.html
 categories:
   - Blog
 tags:
