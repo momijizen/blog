@@ -80,7 +80,8 @@ From the first data segment or sub-district metadata table, I take the populatio
 In Figure 1, the histogram and box plot of the population density visualize the population density. It was calculated from 170 sub-districts. The frequency distribution of the population density was mostly in the range of 71.7 - 92.7 people per square meter. And the interquartile range is 50 - 110 people per square meter.
 
 
-  ![Figure 1: Histogram and Box Plots of population density](https://github.com/momijizen/blog/blob/Report_Capstone_Bangkok/assets/2020-12-05-Report_Capstone_Bangkok/fig1.jpg)
+  ![Figure 1: Histogram and Box Plots of population density](/assets/img/fig1.jpg)
+
 
 <p>
     <img src="/assets/img/fig1.jpg" alt>
