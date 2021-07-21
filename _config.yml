@@ -120,3 +120,15 @@ tag_archive:
   path: /tags/
 
 theme: jekyll-theme-architect
+
+atom:
+  buildCommand:
+    - jekyll
+    - build
+    - --option
+    - --this
+  buildEnv:
+    JEKYLL_ENV: development
+  postDirs:
+    - _posts
+  defaultPostDir: _posts
