@@ -5,12 +5,6 @@ categories:
 tags:
   - Foursquare API
   - location data
-
-defaults:
-  - scope:
-      path: "assets/img_report_cluster"
-    values:
-      image: true
 ---
 
 
@@ -85,7 +79,7 @@ From the first data segment or sub-district metadata table, I take the populatio
 In Figure 1, the histogram and box plot of the population density visualize the population density. It was calculated from 170 sub-districts. The frequency distribution of the population density was mostly in the range of 71.7 - 92.7 people per square meter. And the interquartile range is 50 - 110 people per square meter.
 
 
-  ![Figure 1: Histogram and Box Plots of population density](./assets/img_report_cluster/fig1.png)
+  ![Figure 1: Histogram and Box Plots of population density](./assets/img/fig1.png)
 {% assign image_files = site.static_files | where: "image", true %}
 {% for myimage in image_files %}
   {{ myimage.path }}
