@@ -86,6 +86,11 @@ In Figure 1, the histogram and box plot of the population density visualize the 
   ![figure 1]({{ myimage.path }})
 {% endfor %}
 
+<p>
+    <img src="../assets/img/fig1.jpg" alt>
+    <em>Figure 1: Histogram and Box Plots of population density</em>
+</p>
+
 ## 3.3 Calculate Restaurant Density
 
 I pass the latitude and longitude coordinates of each sub-district as input to the Foursquare API to find a neighborhood venue within a 500m radius from the input coordinates. And I limit the search to 200 venues in each sub-district. and then return the value as a venue table.
