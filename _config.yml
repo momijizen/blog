@@ -131,4 +131,4 @@ atom:
     JEKYLL_ENV: development
   postDirs:
     - _posts
-  defaultPostDir: _posts
+  defaultPostDir: _drafts
