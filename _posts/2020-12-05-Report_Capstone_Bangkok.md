@@ -80,15 +80,15 @@ From the first data segment or sub-district metadata table, I take the populatio
 In Figure 1, the histogram and box plot of the population density visualize the population density. It was calculated from 170 sub-districts. The frequency distribution of the population density was mostly in the range of 71.7 - 92.7 people per square meter. And the interquartile range is 50 - 110 people per square meter.
 
 
-  ![Figure 1: Histogram and Box Plots of population density](/assets/img/fig1.jpg)
+  ![Figure 1: Histogram and Box Plots of population density]({{site.url}}/assets/img/fig1.jpg)
 
 
 <p>
-    <img src="/assets/img/fig1.jpg" alt>
+    <img src="{{site.url}}/assets/img/fig1.jpg" alt>
     <em>Figure 1: Histogram and Box Plots of population density</em>
 </p>
 
-{% include images.html url="/assets/img/fig1.jpg" description="Figure 1: Histogram and Box Plots of population density." %}
+{% include images.html url="{{site.url}}/assets/img/fig1.jpg" description="Figure 1: Histogram and Box Plots of population density." %}
 
 
 ## 3.3 Calculate Restaurant Density
