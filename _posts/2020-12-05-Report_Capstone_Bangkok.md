@@ -87,7 +87,7 @@ In Figure 1, the histogram and box plot of the population density visualize the 
 {% endfor %}
 
 <p>
-    <img src="../assets/img/fig1.jpg" alt>
+    <img src="/assets/img/fig1.jpg" alt>
     <em>Figure 1: Histogram and Box Plots of population density</em>
 </p>
 
