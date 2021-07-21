@@ -5,6 +5,7 @@ categories:
 tags:
   - Foursquare API
   - location data
+my_img: images.html
 ---
 
 
@@ -90,6 +91,10 @@ In Figure 1, the histogram and box plot of the population density visualize the 
     <img src="/assets/img/fig1.jpg" alt>
     <em>Figure 1: Histogram and Box Plots of population density</em>
 </p>
+{% include images.html url="http://jekyllrb.com"
+max-width="200px" file="fig1.jpg" alt="Jekyll logo"
+
+caption="This is the Jekyll logo." %}
 
 ## 3.3 Calculate Restaurant Density
 
