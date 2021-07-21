@@ -95,7 +95,7 @@ In Figure 1, the histogram and box plot of the population density visualize the 
     <em>Figure 1: Histogram and Box Plots of population density</em>
 </p>
 
-{% include images.html url="/assets/img/fig1.jpg" description="My cat, Robert Downey Jr." %}
+{% include images.html url="assets/img/fig1.jpg" description="My cat, Robert Downey Jr." %}
 
 
 ## 3.3 Calculate Restaurant Density
