@@ -83,18 +83,20 @@ In Figure 1, the histogram and box plot of the population density visualize the 
   ![Figure 1: Histogram and Box Plots of population density](../assets/img/fig1.jpg)
 {% assign image_files = site.static_files | where: "image", true %}
 {% for myimage in image_files %}
+<p>
+    <img src="{{ myimage.path }}" alt>
+    <em>Figure 1: Histogram and Box Plots of population density</em>
+</p>
 
-  ![figure 1]({{ myimage.path }})
 {% endfor %}
 
 <p>
     <img src="/assets/img/fig1.jpg" alt>
     <em>Figure 1: Histogram and Box Plots of population density</em>
 </p>
-{% include images.html url="http://jekyllrb.com"
-max-width="200px" file="fig1.jpg" alt="Jekyll logo"
 
-caption="This is the Jekyll logo." %}
+{% include images.html url="/assets/img/fig1.jpg" description="My cat, Robert Downey Jr." %}
+
 
 ## 3.3 Calculate Restaurant Density
 
