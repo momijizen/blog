@@ -6,7 +6,7 @@ tags:
   - Foursquare API
   - location data
 header:
-  image: "/assets/img/map2-1.jpg"
+  image: "/assets/img/map_head.jpg"
 ---
 
 
