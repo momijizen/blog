@@ -1,5 +1,11 @@
 ---
-layout: post
 title: "test"
 date: "2021-07-21 20:49:12 +0700"
+categories:
+  - Blog
+tags:
+  - Foursquare API
+  - location data
+  - project
+
 ---
