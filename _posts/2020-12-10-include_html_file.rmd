@@ -1,5 +1,5 @@
 ---
-title: "Include HTML file "
+title: "Include the HTML files"
 my_html: Report_Clustering_Sub_District_Bangkok.html
 categories:
   - Blog
