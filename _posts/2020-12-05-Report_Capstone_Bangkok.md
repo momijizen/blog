@@ -5,6 +5,7 @@ categories:
 tags:
   - Foursquare API
   - location data
+  - project
 header:
   image: "/assets/img/map_head.jpg"
 ---
