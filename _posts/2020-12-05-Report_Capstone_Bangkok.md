@@ -50,12 +50,12 @@ Investors interested in investing, and stakeholders will be interested in this p
 
 ># 2. Data
 
-## 2.1 Data Requirements
+>## 2.1 Data Requirements
 
 From business problems, we have determined the required feature of the data. These include population density and restaurant density. to be used as input to the clustering algorithm model to categorize the sub-districts.
 
 
-## 2.2 Data Collection
+>## 2.2 Data Collection
 
 The data to be processed includes:
 
@@ -70,14 +70,14 @@ I will divide the data into two parts. The first part uses population data and B
 
 ># 3. Data Preparation
 
-## 3.1 Cleaning data
+>## 3.1 Cleaning data
 
 Combine downloaded data from multiple parts into two parts. The first data segment contains sub-district ID, sub-district name, district ID, district name, latitude coordinates, longitude coordinates, population, and shape area. The second data segment contains sub-district id, sub-district name, and geometry. We will use the first data segment is used to analyze to calculate population density and restaurant density. And the second data segment to create a GeoJson file for the visualize choropleth map.
 
 The first data segment contains the number of sub-district ID is 170 records. I found a problem with 10 records missing values in latitude coordinates, longitude columns. From the analysis we cannot drop it because the data is will not synchronize with the choropleth map, so we use the geopy library to find the missing latitude, longitude coordinates by passing the sub-district name and district name values as input strings to the geopy library. Save the file after cleaning the data to reduce the above steps in the next run.
 
 
-## 3.2 Calculate Population Density
+>## 3.2 Calculate Population Density
 
 From the first data segment or sub-district metadata table, I take the population column divided by the shape area column to get people per square kilometer or population density and change the scale to people per square meter, then concatenation population density column to the sub-district metadata table.
 
@@ -87,7 +87,7 @@ In Figure 1, the histogram and box plot of the population density visualize the 
   ![Figure 1: Histogram and Box Plots of population density](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig1.jpg)
 
 
-## 3.3 Calculate Restaurant Density
+>## 3.3 Calculate Restaurant Density
 
 I pass the latitude and longitude coordinates of each sub-district as input to the Foursquare API to find a neighborhood venue within a 500m radius from the input coordinates. And I limit the search to 200 venues in each sub-district. and then return the value as a venue table.
 
@@ -99,7 +99,7 @@ In Figure 4, the histogram and box plot of the restaurant density visualize the 
 
 ![Figure 3: : Histogram and Box Plots of restaurant density](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig2.jpg)
 
-## 3.4 Correlation between population density and restaurant density
+>## 3.4 Correlation between population density and restaurant density
 
 In Figure 4, the scatter plot of correlation between population density and restaurant density visualizes a relation where the x-axis is the population density, and the y-axis variable is the restaurant density. The figure illustrates that most of the data is distributed along the x-axis rather than the y-axis.
 
@@ -110,7 +110,7 @@ In Figure 4, the scatter plot of correlation between population density and rest
 Before passing the dataset into the models, using the Z-Score method normalizes the data. Because the scale of each feature is different. Z-Score Formula:  Z=  (x- μ)/σ
 
 
-## 4.1 K-Mean Clustering Algorithm
+>## 4.1 K-Mean Clustering Algorithm
 
 The first method chose k-mean clustering, which is an unsupervised learning type of machine learning algorithm because our problem was to cluster the sub-district data and our dataset is untagged data.
 
@@ -118,7 +118,7 @@ The first step for the k-mean algorithm is to determine the optimal number of cl
 
 ![Figure 5: Optimal K of Clusters](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig5-0.jpg)
 
-## 4.2 Mean-Shift Clustering Algorithm
+>## 4.2 Mean-Shift Clustering Algorithm
 
 The second method I use is Mean-Shift algorithm because of the Mean-Shift algorithm used in scikits.learn.feature_extraction module takes the shape matrix [n_samples, n_features] as input, which is the same as K-mean algorithms
 
@@ -128,13 +128,13 @@ For this dataset, the estimated number of clusters after passing the Mean-Shift 
 
 ># 5. Results
 
-## 5.1 K-Mean Clustering Algorithm
+>## 5.1 K-Mean Clustering Algorithm
 
 The result from the k-mean model and the number of clusters was 5 (k=5) considering the k-value from the Elbow Method. In Figure 6, visualize the resulting clusters on the choropleth map. On the map, when hovering over a sub-district area of interest, it displays a text label sub-district name, restaurant per square meter, population per square meter, cluster label (K-mean), and the most common category of restaurants.
 
 ![Figure 6: K-mean Clusters Choropleth Map](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/map0f.jpg)
 
-## 5.2 Mean-Shift Clustering Algorithm
+>## 5.2 Mean-Shift Clustering Algorithm
 
 The results from the mean-shift model and the number of estimated clusters are 6. In Figure 7, visualize the resulting clusters on the choropleth map. On the map, when hovering over a sub-district area of interest, it displays a text label sub-district name, restaurant per square meter, population per square meter, cluster label (Mean-shift), and the most common category of restaurants.
 
