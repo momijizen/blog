@@ -1,6 +1,6 @@
 ---
 title: "test"
-date: "2021-07-21 20:49:12 +0700"
+date: 2021-07-21 20:49:12 
 categories:
   - Blog
 tags:
