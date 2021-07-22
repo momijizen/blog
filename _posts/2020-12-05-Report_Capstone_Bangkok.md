@@ -83,12 +83,6 @@ In Figure 1, the histogram and box plot of the population density visualize the 
   ![Figure 1: Histogram and Box Plots of population density]({{site.url}}/assets/img/fig1.jpg)
 
 
-<p>
-    <img src="/assets/img/fig1.jpg" alt>
-    <em>Figure 1: Histogram and Box Plots of population density</em>
-</p>
-
-{% include images.html url="/assets/img/fig1.jpg" description="Figure 1: Histogram and Box Plots of population density." %}
 
 
 ## 3.3 Calculate Restaurant Density
