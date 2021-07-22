@@ -10,9 +10,10 @@ header:
   image: "/assets/img/map_head.jpg"
 ---
 
-> <a href="https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb">Link Notebook</a>
+> <a href="https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb">Link: Notebook</a>
 
-># Table of Contents
+> # Table of Contents
+
 1. Introduction
   - Background
   - Business Problem
@@ -31,7 +32,7 @@ header:
 7. Conclusion
 8. Reference
 
-# 1. Introduction
+># 1. Introduction
 
 ## Background
 
@@ -47,7 +48,7 @@ From the information, Bangkok is the city with the highest population density in
 
 Investors interested in investing, and stakeholders will be interested in this project. And take this as part of your investment consideration. Once we have analyzed the existing data and solved these problems with machine learning methods. Then create a map and visualized group each district of population density and restaurants density.
 
-# 2. Data
+># 2. Data
 
 ## 2.1 Data Requirements
 
@@ -67,7 +68,7 @@ The data to be processed includes:
 I will divide the data into two parts. The first part uses population data and Bangkok boundary coordinates to calculate the population density. The second part uses the district location coordinates as input to the Foursquare API to find restaurants within a radius of 500 meters from the location coordinates.
 
 
-# 3. Data Preparation
+># 3. Data Preparation
 
 ## 3.1 Cleaning data
 
@@ -104,7 +105,7 @@ In Figure 4, the scatter plot of correlation between population density and rest
 
 ![Figure 4: : Correlation between population density and restaurant density](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig3.jpg)
 
-# 4. Model
+># 4. Model
 
 Before passing the dataset into the models, using the Z-Score method normalizes the data. Because the scale of each feature is different. Z-Score Formula:  Z=  (x- μ)/σ
 
@@ -125,7 +126,7 @@ Mean-Shift clusters data by estimating blobs in a smooth density of points matri
 For this dataset, the estimated number of clusters after passing the Mean-Shift model is 6.
 
 
-# 5. Results
+># 5. Results
 
 ## 5.1 K-Mean Clustering Algorithm
 
@@ -139,19 +140,19 @@ The results from the mean-shift model and the number of estimated clusters are 6
 
 ![Figure 7: Mean-Shift Clusters Choropleth Map](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/map1f.jpg)
 
-# 6. Discussion
+># 6. Discussion
 
 From a problem is clustering sub-district in Bangkok and there are two solutions I have selected: the first method is K-Mean clustering, which is the most popular method. In order to train the model with my dataset, which is a small dataset (170 samples) and it is difficult to select the suitable k. So, I chose the second method which is Mean-Shift clustering, which is appropriate for a small dataset and does not set the number of clusters.
 
 However, the model imported dataset has only 2 features, which are very minimal. So, in order to improve this project in the future, I plan to add more analytical features.
 
 
-# 7. Conclusion
+># 7. Conclusion
 
 In this study, I am trying to cluster the sub-district in Bangkok as an informative decision for investors to build a business, especially a restaurant business. It considers two features: population density and restaurant density. However, the restaurant data that we analyzed is taken from the Foursquare API, which only retrieves the restaurants that are online on the Foursquare platform, so there are many offline restaurants that have not been considered. This is an important part that we must continue to improve. However, in this study, it is still beneficial to the creators and those who are interested in bringing this concept to the next level.
 
 
-# 8. Reference
+># 8. Reference
 
 * [1] https://en.wikipedia.org/wiki/Bangkok
 * [2] Population data - https://data.go.th/dataset
