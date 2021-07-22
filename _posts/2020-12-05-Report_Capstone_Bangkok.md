@@ -12,7 +12,7 @@ header:
 
 > <a href="https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb">Link Notebook</a>
 
-# Table of Contents
+># Table of Contents
 1. Introduction
   - Background
   - Business Problem
@@ -35,17 +35,17 @@ header:
 
 ## Background
 
-> Bangkok is the capital and most populous city of Thailand. It is known in Thai as Krung Thep Maha Nakhon or simply Krung Thep. The city occupies 1,568.7 square kilometers (605.7 sq mi) in the Chao Phraya River delta in central Thailand and has an estimated population of 10.539 million as of 2020, 15.3 percent of the country's population. Over fourteen million people (22.2 percent) lived within the surrounding Bangkok Metropolitan Region at the 2010 census, making Bangkok an extremely primate city, dwarfing Thailand's other urban centers in both size and importance to the national economy.
+Bangkok is the capital and most populous city of Thailand. It is known in Thai as Krung Thep Maha Nakhon or simply Krung Thep. The city occupies 1,568.7 square kilometers (605.7 sq mi) in the Chao Phraya River delta in central Thailand and has an estimated population of 10.539 million as of 2020, 15.3 percent of the country's population. Over fourteen million people (22.2 percent) lived within the surrounding Bangkok Metropolitan Region at the 2010 census, making Bangkok an extremely primate city, dwarfing Thailand's other urban centers in both size and importance to the national economy.
 
 ## Business Problem
 
 > How to find a suitable restaurant business location in Bangkok?
 
-> From the information, Bangkok is the city with the highest population density in Thailand. There are many buildings and meeting places. Therefore, it is interesting for investors to build a business, specifically a restaurant business. But it is difficult to find the suitable place for the restaurant location. The problem with stakeholders is finding a place with less restaurant density and high population density. Therefore, in this project, we will use data science methods to analyze the data to display the results for stakeholders to consider as part of business decision-making.
+From the information, Bangkok is the city with the highest population density in Thailand. There are many buildings and meeting places. Therefore, it is interesting for investors to build a business, specifically a restaurant business. But it is difficult to find the suitable place for the restaurant location. The problem with stakeholders is finding a place with less restaurant density and high population density. Therefore, in this project, we will use data science methods to analyze the data to display the results for stakeholders to consider as part of business decision-making.
 
 ## Interest
 
-> Investors interested in investing, and stakeholders will be interested in this project. And take this as part of your investment consideration. Once we have analyzed the existing data and solved these problems with machine learning methods. Then create a map and visualized group each district of population density and restaurants density.
+Investors interested in investing, and stakeholders will be interested in this project. And take this as part of your investment consideration. Once we have analyzed the existing data and solved these problems with machine learning methods. Then create a map and visualized group each district of population density and restaurants density.
 
 # 2. Data
 
