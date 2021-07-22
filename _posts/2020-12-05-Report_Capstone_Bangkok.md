@@ -5,7 +5,8 @@ categories:
 tags:
   - Foursquare API
   - location data
-my_img: images.html
+header:
+  image: "/assets/img/map2-1.jpg"
 ---
 
 
@@ -87,17 +88,19 @@ In Figure 1, the histogram and box plot of the population density visualize the 
 
 I pass the latitude and longitude coordinates of each sub-district as input to the Foursquare API to find a neighborhood venue within a 500m radius from the input coordinates. And I limit the search to 200 venues in each sub-district. and then return the value as a venue table.
 
-For a list of restaurant data, I drop duplicate venues ID and keep venues that are distant closest to the sub-district coordinates, then explore and select only the restaurant category. The results return from the Foursquare API for restaurants are 733 restaurants and 46 unique categories. See Figure 3. Then calculate the restaurant density, I divided the number of restaurants in each sub-district by the circled area of 500m radius, then concatenation restaurant density column to the sub-district metadata table.
+For a list of restaurant data, I drop duplicate venues ID and keep venues that are distant closest to the sub-district coordinates, then explore and select only the restaurant category. The results return from the Foursquare API for restaurants are 733 restaurants and 46 unique categories. See Figure 2. Then calculate the restaurant density, I divided the number of restaurants in each sub-district by the circled area of 500m radius, then concatenation restaurant density column to the sub-district metadata table.
 
-
-fig
+  ![Figure 2: Number of Restaurant Category](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig2-2.jpg)
 
 In Figure 4, the histogram and box plot of the restaurant density visualize the restaurant density. It was calculated from 170 sub-districts. The frequency distribution of the restaurant density was mostly in the range of 0 - 0.522 restaurants per square meter. And the interquartile range is 0 - 1 restaurant per square meter.
 
+![Figure 3: : Histogram and Box Plots of restaurant density](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig2.jpg)
+
 ## 3.4 Correlation between population density and restaurant density
 
-In Figure 3, the scatter plot of correlation between population density and restaurant density visualizes a relation where the x-axis is the population density, and the y-axis variable is the restaurant density. The figure illustrates that most of the data is distributed along the x-axis rather than the y-axis.
+In Figure 4, the scatter plot of correlation between population density and restaurant density visualizes a relation where the x-axis is the population density, and the y-axis variable is the restaurant density. The figure illustrates that most of the data is distributed along the x-axis rather than the y-axis.
 
+![Figure 4: : Correlation between population density and restaurant density](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig3.jpg)
 
 # 4. Model
 
@@ -108,8 +111,9 @@ Before passing the dataset into the models, using the Z-Score method normalizes 
 
 The first method chose k-mean clustering, which is an unsupervised learning type of machine learning algorithm because our problem was to cluster the sub-district data and our dataset is untagged data.
 
-The first step for the k-mean algorithm is to determine the optimal number of clusters. The Elbow Method is one of the most popular methods to determine this optimal value of k. See Figure 4. To determine the optimal number of clusters, we have to select the value of k at the “elbow”. Therefore, for this dataset, I decided that the optimal number of clusters for the data is 5.
+The first step for the k-mean algorithm is to determine the optimal number of clusters. The Elbow Method is one of the most popular methods to determine this optimal value of k. See Figure 5. To determine the optimal number of clusters, we have to select the value of k at the “elbow”. Therefore, for this dataset, I decided that the optimal number of clusters for the data is 5.
 
+![Figure 5: Optimal K of Clusters](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/fig5-0.jpg)
 
 ## 4.2 Mean-Shift Clustering Algorithm
 
@@ -123,13 +127,15 @@ For this dataset, the estimated number of clusters after passing the Mean-Shift 
 
 ## 5.1 K-Mean Clustering Algorithm
 
-The result from the k-mean model and the number of clusters was 5 (k=5) considering the k-value from the Elbow Method. In Figure 5, visualize the resulting clusters on the choropleth map. On the map, when hovering over a sub-district area of interest, it displays a text label sub-district name, restaurant per square meter, population per square meter, cluster label (K-mean), and the most common category of restaurants.
+The result from the k-mean model and the number of clusters was 5 (k=5) considering the k-value from the Elbow Method. In Figure 6, visualize the resulting clusters on the choropleth map. On the map, when hovering over a sub-district area of interest, it displays a text label sub-district name, restaurant per square meter, population per square meter, cluster label (K-mean), and the most common category of restaurants.
 
+![Figure 6: K-mean Clusters Choropleth Map](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/map0f.jpg)
 
 ## 5.2 Mean-Shift Clustering Algorithm
 
-The results from the mean-shift model and the number of estimated clusters are 6. In Figure 6, visualize the resulting clusters on the choropleth map. On the map, when hovering over a sub-district area of interest, it displays a text label sub-district name, restaurant per square meter, population per square meter, cluster label (Mean-shift), and the most common category of restaurants.
+The results from the mean-shift model and the number of estimated clusters are 6. In Figure 7, visualize the resulting clusters on the choropleth map. On the map, when hovering over a sub-district area of interest, it displays a text label sub-district name, restaurant per square meter, population per square meter, cluster label (Mean-shift), and the most common category of restaurants.
 
+![Figure 7: Mean-Shift Clusters Choropleth Map](https://raw.githubusercontent.com/momijizen/blog/master/assets/img/map1f.jpg)
 
 # 6. Discussion
 
