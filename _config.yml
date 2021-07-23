@@ -114,9 +114,9 @@ defaults:
       path: "assets/img"
     values:
       image: true
-#category_archive:
-  #type: liquid
-  #path: /categories/
+category_archive:
+  type: liquid
+  path: /categories/
 tag_archive:
   type: liquid
   path: /tags/

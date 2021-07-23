@@ -1,7 +1,7 @@
 ---
 title: "Clustering Sub-district in Bangkok, Thailand "
 categories:
-  - Blog
+  - Project
 tags:
   - Foursquare API
   - location data
