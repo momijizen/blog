@@ -8,7 +8,10 @@ tags:
   - IBM
   - Coursera
 link: https://coursera.org/share/72ed56484504d3243e846ddd32db0ff2
+my_pdf: Coursera_ibm_data_science.pdf
 ---
 >I completed the IBM Data Science course, which is a professional certificate from Coursera.
 
-> <a href="https://coursera.org/share/72ed56484504d3243e846ddd32db0ff2">Link: Notebook</a>
+{% if page.my_pdf %}
+  {% include {{ page.my_pdf }} %}
+{% endif %}
