@@ -1,5 +1,5 @@
 ---
-title: "Certificate - Data Analysis with Python"
+title: "Data Analysis with Python Certificate"
 date: 2021-03-16
 categories:
   - Certificate

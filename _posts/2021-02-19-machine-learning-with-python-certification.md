@@ -1,0 +1,13 @@
+---
+title: "Machine Learning with Python Certification"
+date: "2021-02-19 16:10:55 +0700"
+categories:
+  - Certificate
+tags:
+  - Certificate
+  - freeCodeCamp.org
+link: https://freecodecamp.org/certification/momijizen/machine-learning-with-python-v7
+---
+
+>I completed the Machine Learning with Python course, which is a certificate from freeCodeCamp.org
+.
