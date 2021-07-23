@@ -7,10 +7,5 @@ tags:
   - Certificate
   - freeCodeCamp.org
 link: https://www.freecodecamp.org/certification/momijizen/data-analysis-with-python-v7
-my_pdf: Coursera_ibm_data_science.pdf
 ---
 >I completed the Data Analysis with Python course, which is a  certificate from freeCodeCamp.org
-
-{% if page.my_pdf %}
-  {% include {{ page.my_pdf }} %}
-{% endif %}
