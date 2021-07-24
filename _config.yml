@@ -23,13 +23,14 @@ url: https://momijizen.github.io
 
 #twitter_username: username
 github_username: momijizen
-minimal_mistakes_skin: mint #default #contrast
+minimal_mistakes_skin: "contrast" #mint #default
 search: true
 logo: "/assets/images/maple.png"
 
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+theme: jekyll-theme-architect
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -64,8 +65,9 @@ author:
   name   : "ORAWAN M."
   avatar : "/assets/images/bio_photo.jpg"
   bio    : "📌❤️🏳️‍🌈☕️✨️software developer✦fiction reader✦traveler✨️"
+  location: "Chonburi, Thailand"
   links:
-    - label: "e-mail"
+    - label: "E-mail"
       icon: "fas fa-fw fa-link"
       url: "https://hotmail.com/momiizen@hotmail.com"
    # - label: "Twitter"
@@ -121,7 +123,7 @@ tag_archive:
   type: liquid
   path: /tags/
 
-theme: jekyll-theme-architect
+
 
 atom:
   buildCommand:
