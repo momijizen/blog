@@ -1,5 +1,5 @@
 ---
-title: "IBM Data Science Specialization Certificate"
+title: "IBM Data Science Professional Certificate"
 date: 2021-06-30
 categories:
   - Certificate
