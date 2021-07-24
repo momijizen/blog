@@ -13,7 +13,7 @@ toc_label: "Table of Contents"
 toc_icon: "fas fa-list"
 ---
 
-![Link: Notebook](https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb){: .btn .btn--info}
+[Link: Notebook](https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb )
 
 
 ># 1. Introduction
