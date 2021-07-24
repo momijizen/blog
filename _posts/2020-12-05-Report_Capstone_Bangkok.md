@@ -9,31 +9,12 @@ tags:
 header:
   image: "/assets/img/map_head.jpg"
 toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
+toc_label: "Table of Contents"
+toc_icon: "f03a"
 ---
 
 > <a href="https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb">Link: Notebook</a>
 
-> # Table of Contents
-
-1. Introduction
-  - Background
-  - Business Problem
-  - Interest
-2. Data
-  - Population data
-  - Shape area data
-  - Location data
-  - Foursquare API
-3. Data Preparation
-4. Model
-  - K-Mean Clustering Algorithm
-  - Mean-Shift Clustering Algorithm
-5. Result
-6. Discussion
-7. Conclusion
-8. Reference
 
 ># 1. Introduction
 
