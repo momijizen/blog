@@ -23,7 +23,7 @@ url: https://momijizen.github.io
 
 #twitter_username: username
 github_username: momijizen
-minimal_mistakes_skin: contrast #mint #default
+minimal_mistakes_skin: mint #default #contrast
 search: true
 logo: "/assets/images/maple.png"
 
