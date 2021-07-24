@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning with Python Certification"
+title: "Machine Learning with Python Certificate"
 date: "2021-02-19 16:10:55 +0700"
 categories:
   - Certificate
