@@ -10,7 +10,7 @@ header:
   image: "/assets/img/map_head.jpg"
 toc: true
 toc_label: "Table of Contents"
-toc_icon: "fas"
+toc_icon: "fas fa-list"
 ---
 
 > <a href="https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb">Link: Notebook</a>
