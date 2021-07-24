@@ -15,6 +15,8 @@ toc_icon: "fas fa-list"
 
 > <a href="https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb">Link: Notebook</a>
 
+[Link: Notebook](#https://nbviewer.jupyter.org/github/momijizen/Coursera_Capstone/blob/main/Report_Capstone_Bangkok.ipynb){: .btn .btn--info}
+
 
 ># 1. Introduction
 
