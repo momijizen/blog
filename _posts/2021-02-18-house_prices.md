@@ -1402,10 +1402,10 @@ Histogram - Kurtosis and skewness.
 Normal probability plot - Data distribution should closely follow the diagonal that represents the normal distribution.
 
 
-![output_40_0](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_0.png)
+![output_40_0](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_0.png)
 
 
-![output_40_1](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_1.png)
+![output_40_1](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_1.png)
 
 Applying log transformation.
 
