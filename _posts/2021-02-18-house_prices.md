@@ -10,10 +10,12 @@ toc_label: "Table of Contents"
 toc_icon: "fas fa-list"
 ---
 
-# House Prices Prediction
+[Link: Notebook](https://github.com/momijizen/House-Prices---Advanced-Regression-Techniques-/blob/main/House_Prices.ipynb)
+
+> House Prices Prediction
 This is a project to practice skills for data exploration and advanced regression techniques.
 
-In this challenge, I'm using a house price dataset from the Kaggle competition and I wanted to explore the data and build a machine learning model that would predict house prices.
+>In this challenge, I'm using a house price dataset from the Kaggle competition and I wanted to explore the data and build a machine learning model that would predict house prices.
 
 # Data
 The dataset contains 79 explanatory variables that describe (almost) every aspect of residential homes.
