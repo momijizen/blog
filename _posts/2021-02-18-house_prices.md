@@ -1234,11 +1234,10 @@ Displays a histogram of the `SalePrice` column.
 
 
 ### `SalePrice` correlation matrix (zoomed heatmap style)
-Scatter plots between the most correlated
 
 In the `SalePrice` correlation matrix (zoomed heat map style) I see three orange-colored squares that get my attention. The first refers to the `TotalBsmtSF` and `1stFlrSF` variables, and the second refers to the `GarageCar` and `GarageArea` variables, and the third refers to the `GrLivArea` and `TotRmsAbvGrd` variables. These cases show how significant the correlation is between these variables. We can conclude that these variables give almost the same information.
 
-
+Scatter plots between the most correlated
 ![`SalePrice` correlation matrix (zoomed heatmap style)](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_24_0.png)
 
 
@@ -1395,10 +1394,6 @@ Calculates the null values for each column.
 
 From the sum of the calculated null values. I deleted a column with over one null value and delete one row where the Electrical column is null.
 
-## Outliers
-
-![Outliers](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_35_1.png)
-
 
 ## Normalization
 
@@ -1407,17 +1402,17 @@ Histogram - Kurtosis and skewness.
 Normal probability plot - Data distribution should closely follow the diagonal that represents the normal distribution.
 
 
-![png](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_0.png)
+![output_40_0](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_0.png)
 
 
-![png](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_1.png)
+![output_40_1](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_1.png)
 
 Applying log transformation.
 
-![png](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_42_0.png)
+![output_42_0](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_42_0.png)
 
 
-![png](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_42_1.png)
+![output_42_1](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_42_1.png)
 
 
 
@@ -1967,8 +1962,8 @@ The graph displays the predicted values and the actual values.
 
 ![the predicted values and the actual values](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_69_0.png)
 
-
 # Conclusion
+
 
 In this project, we explore the dataset and analysts `SalePrice` variable with the most correlated variables, we clean up missing data and outliers. We normalize data with statistics. We also converted categorical variables to numeric variables. After that, we used a Random Forest Regression model to predict house prices.
 
