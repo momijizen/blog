@@ -15,10 +15,10 @@ This is a project to practice skills for data exploration and advanced regressio
 
 In this challenge, I'm using a house price dataset from the Kaggle competition and I wanted to explore the data and build a machine learning model that would predict house prices.
 
-#Data
+# Data
 The dataset contains 79 explanatory variables that describe (almost) every aspect of residential homes.
 
-##Import libraries
+## Import libraries
 
 
 ```python
@@ -73,11 +73,6 @@ files.upload()
 ```
 
 
-```python
-df_train = pd.read_csv('train.csv')
-df_train
-```
-
 
 
 
@@ -95,7 +90,7 @@ df_train
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1114,13 +1109,10 @@ df_train
 
 
 
-##Explore Data
+## Explore Data
 Explore each feature.
 
 
-```python
-df_train.info()
-```
 
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 1460 entries, 0 to 1459
@@ -1215,10 +1207,6 @@ df_train.info()
 Analyze the 'SalePrice' column. The 'Saleprice' is the reason for our forecast.
 
 
-```python
-df_train['SalePrice'].describe()
-```
-
 
 
 
@@ -1237,26 +1225,9 @@ df_train['SalePrice'].describe()
 Displays a histogram of the 'SalePrice' column.
 
 
-```python
-sns.histplot(df_train['SalePrice'])
-```
-
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x7ff60798be50>
-
-
-
 
 ![png](output_13_1.png)
 
-
-
-```python
-print("Skewness: %f" % df_train['SalePrice'].skew())
-print("Kurtosis: %f" % df_train['SalePrice'].kurt())
-```
 
     Skewness: 1.882876
     Kurtosis: 6.536282
@@ -1265,24 +1236,11 @@ print("Kurtosis: %f" % df_train['SalePrice'].kurt())
 ### Relationship with numerical variables
 
 
-```python
-#scatter plot grlivarea/saleprice
-var = 'GrLivArea'
-data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
-data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000));
-```
 
 
 ![png](output_16_0.png)
 
 
-
-```python
-#scatter plot totalbsmtsf/saleprice
-var = 'TotalBsmtSF'
-data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
-data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000));
-```
 
 
 ![png](output_17_0.png)
@@ -1291,28 +1249,11 @@ data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000));
 ### Relationship with categorical features
 
 
-```python
-#box plot overallqual/saleprice
-var = 'OverallQual'
-data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
-f, ax = plt.subplots(figsize=(8, 6))
-fig = sns.boxplot(x=var, y="SalePrice", data=data)
-fig.axis(ymin=0, ymax=800000);
-```
-
 
 ![png](output_19_0.png)
 
 
 
-```python
-var = 'YearBuilt'
-data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
-f, ax = plt.subplots(figsize=(16, 8))
-fig = sns.boxplot(x=var, y="SalePrice", data=data)
-fig.axis(ymin=0, ymax=800000);
-plt.xticks(rotation=90);
-```
 
 
 ![png](output_20_0.png)
@@ -1321,12 +1262,6 @@ plt.xticks(rotation=90);
 ### Correlation matrix (heatmap style)
 
 
-```python
-#correlation matrix
-corrmat = df_train.corr()
-f, ax = plt.subplots(figsize=(12, 9))
-sns.heatmap(corrmat, vmax=.8, square=True);
-```
 
 
 ![png](output_22_0.png)
@@ -1364,16 +1299,8 @@ According to the 'SalePrice' correlation matrix, these are the variables most co
 * 'YearBuilt' is slightly correlated with 'SalePrice'.
 
 
-###Scatter plots between 'SalePrice' and correlated variables
+### Scatter plots between 'SalePrice' and correlated variables
 
-
-```python
-#scatterplot
-sns.set()
-cols = ['SalePrice', 'OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'FullBath', 'YearBuilt']
-sns.pairplot(df_train[cols], size = 2.5)
-plt.show();
-```
 
 
 ![png](output_27_0.png)
@@ -1384,14 +1311,6 @@ plt.show();
 
 Calculates the Null values for each column.
 
-
-```python
-#missing data
-total = df_train.isnull().sum().sort_values(ascending=False)
-percent = (df_train.isnull().sum()/df_train.isnull().count()).sort_values(ascending=False)
-missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
-missing_data.head(20)
-```
 
 
 
@@ -1529,70 +1448,9 @@ From the sum of the calculated null values. I deleted a column with over one nul
 
 
 
-```python
-#dealing with missing data
-df_train = df_train.drop((missing_data[missing_data['Total'] > 1]).index,1)
-df_train = df_train.drop(df_train.loc[df_train['Electrical'].isnull()].index)
-df_train.isnull().sum().max() #just checking that there's no missing data missing...
-```
 
+## Outliers
 
-
-
-    0
-
-
-
-##Outliers
-
-
-```python
-# Univariate analysis
-
-#standardizing data
-saleprice_scaled = StandardScaler().fit_transform(df_train['SalePrice'][:,np.newaxis]);
-low_range = saleprice_scaled[saleprice_scaled[:,0].argsort()][:10]
-high_range= saleprice_scaled[saleprice_scaled[:,0].argsort()][-10:]
-print('outer range (low) of the distribution:')
-print(low_range)
-print('\nouter range (high) of the distribution:')
-print(high_range)
-```
-
-    outer range (low) of the distribution:
-    [[-1.838]
-     [-1.833]
-     [-1.8  ]
-     [-1.783]
-     [-1.774]
-     [-1.623]
-     [-1.617]
-     [-1.585]
-     [-1.585]
-     [-1.573]]
-
-    outer range (high) of the distribution:
-    [[3.828]
-     [4.04 ]
-     [4.495]
-     [4.709]
-     [4.729]
-     [5.06 ]
-     [5.422]
-     [5.59 ]
-     [7.1  ]
-     [7.226]]
-
-
-
-```python
-#bivariate analysis saleprice/grlivarea
-var = 'GrLivArea'
-data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
-data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000));
-```
-
-    *c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2-D array with a single row if you intend to specify the same RGB or RGBA value for all points.
 
 
 
@@ -1600,31 +1458,12 @@ data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000));
 
 
 
-```python
-#df = df.loc[(df['value'] >= df['value'].quantile(.025)) & (df['value'] <= df['value'].quantile(.975))]
-```
-
-
-```python
-#deleting points
-df_train.sort_values(by = 'GrLivArea', ascending = False)[:2]
-df_train = df_train.drop(df_train[df_train['Id'] == 1299].index)
-df_train = df_train.drop(df_train[df_train['Id'] == 524].index)
-```
-
-##Normalization
+## Normalization
 
 Histogram - Kurtosis and skewness.
 
 Normal probability plot - Data distribution should closely follow the diagonal that represents the normal distribution.
 
-
-```python
-#histogram and normal probability plot
-sns.distplot(df_train['SalePrice'], fit=norm);
-fig = plt.figure()
-res = stats.probplot(df_train['SalePrice'], plot=plt)
-```
 
 
 ![png](output_40_0.png)
@@ -1635,18 +1474,7 @@ res = stats.probplot(df_train['SalePrice'], plot=plt)
 
 
 
-```python
-#applying log transformation
-df_train['SalePrice'] = np.log(df_train['SalePrice'])
-```
 
-
-```python
-#transformed histogram and normal probability plot
-sns.distplot(df_train['SalePrice'], fit=norm);
-fig = plt.figure()
-res = stats.probplot(df_train['SalePrice'], plot=plt)
-```
 
 
 ![png](output_42_0.png)
@@ -1657,14 +1485,6 @@ res = stats.probplot(df_train['SalePrice'], plot=plt)
 
 
 
-```python
-#histogram and normal probability plot
-sns.distplot(df_train['GrLivArea'], fit=norm);
-fig = plt.figure()
-res = stats.probplot(df_train['GrLivArea'], plot=plt)
-```
-
-
 ![png](output_43_0.png)
 
 
@@ -1673,18 +1493,9 @@ res = stats.probplot(df_train['GrLivArea'], plot=plt)
 
 
 
-```python
-#data transformation
-df_train['GrLivArea'] = np.log(df_train['GrLivArea'])
-```
 
 
-```python
-#transformed histogram and normal probability plot
-sns.distplot(df_train['GrLivArea'], fit=norm);
-fig = plt.figure()
-res = stats.probplot(df_train['GrLivArea'], plot=plt)
-```
+
 
 
 ![png](output_45_0.png)
@@ -1695,13 +1506,6 @@ res = stats.probplot(df_train['GrLivArea'], plot=plt)
 
 
 
-```python
-#histogram and normal probability plot
-sns.distplot(df_train['TotalBsmtSF'], fit=norm);
-fig = plt.figure()
-res = stats.probplot(df_train['TotalBsmtSF'], plot=plt)
-```
-
 
 ![png](output_46_0.png)
 
@@ -1711,27 +1515,7 @@ res = stats.probplot(df_train['TotalBsmtSF'], plot=plt)
 
 
 
-```python
-#create column for new variable (one is enough because it's a binary categorical feature)
-#if area>0 it gets 1, for area==0 it gets 0
-df_train['HasBsmt'] = pd.Series(len(df_train['TotalBsmtSF']), index=df_train.index)
-df_train['HasBsmt'] = 0
-df_train.loc[df_train['TotalBsmtSF']>0,'HasBsmt'] = 1
-```
 
-
-```python
-#transform data
-df_train.loc[df_train['HasBsmt']==1,'TotalBsmtSF'] = np.log(df_train['TotalBsmtSF'])
-```
-
-
-```python
-#histogram and normal probability plot
-sns.distplot(df_train[df_train['TotalBsmtSF']>0]['TotalBsmtSF'], fit=norm);
-fig = plt.figure()
-res = stats.probplot(df_train[df_train['TotalBsmtSF']>0]['TotalBsmtSF'], plot=plt)
-```
 
 
 ![png](output_49_0.png)
@@ -1742,41 +1526,15 @@ res = stats.probplot(df_train[df_train['TotalBsmtSF']>0]['TotalBsmtSF'], plot=pl
 
 
 
-```python
-#scatter plot
-plt.scatter(df_train['GrLivArea'], df_train['SalePrice']);
-```
-
 
 ![png](output_50_0.png)
 
-
-
-```python
-#scatter plot
-plt.scatter(df_train[df_train['TotalBsmtSF']>0]['TotalBsmtSF'], df_train[df_train['TotalBsmtSF']>0]['SalePrice']);
-```
 
 
 ![png](output_51_0.png)
 
 
 ##Convert categorical variable into numberic variable
-
-
-```python
-#convert categorical variable into dummy
-df_train = pd.get_dummies(df_train)
-```
-
-
-```python
-print(df_train.shape)
-df_train.head()
-```
-
-    (1457, 222)
-
 
 
 
@@ -2310,25 +2068,16 @@ df_train.head()
 
 
 
-#Model
+# Model
 
-##Random Forest Regression
+## Random Forest Regression
 
-###Identify your dependent (y) and independent variables (X)
-
-
-```python
-x = df_train.copy()
-x.drop(columns='SalePrice',axis=1,inplace=True)
-```
+### Identify your dependent (y) and independent variables (X)
 
 
-```python
-y = df_train['SalePrice']
-y = y.to_frame()
-```
 
-###Split the dataset into the Training set and Test set
+
+### Split the dataset into the Training set and Test set
 
 
 ```python
@@ -2346,65 +2095,14 @@ model.fit(x_train,y_trian)
 
 
 
-    RandomForestRegressor(bootstrap=True, ccp_alpha=0.0, criterion='mse',
-                          max_depth=None, max_features='auto', max_leaf_nodes=None,
-                          max_samples=None, min_impurity_decrease=0.0,
-                          min_impurity_split=None, min_samples_leaf=1,
-                          min_samples_split=2, min_weight_fraction_leaf=0.0,
-                          n_estimators=10, n_jobs=None, oob_score=False,
-                          random_state=0, verbose=0, warm_start=False)
 
-
-
-###Predicting the Test set results
+### Predicting the Test set results
 
 
 ```python
 y_pred= model.predict(x_test)
 y_pred
 ```
-
-
-
-
-    array([11.644, 12.049, 11.374, 11.797, 12.591, 11.876, 11.983, 11.747,
-           11.876, 12.174, 12.008, 12.083, 12.084, 11.77 , 11.481, 12.057,
-           12.335, 11.571, 12.101, 12.922, 12.535, 12.009, 12.579, 11.476,
-           11.677, 11.829, 11.775, 10.9  , 12.026, 12.667, 11.756, 11.932,
-           12.344, 12.193, 12.87 , 11.83 , 11.563, 11.731, 11.903, 11.912,
-           11.736, 12.142, 12.533, 11.813, 12.123, 12.302, 12.58 , 11.79 ,
-           11.676, 12.42 , 12.469, 11.626, 11.72 , 12.08 , 12.903, 12.319,
-           12.603, 11.673, 11.997, 11.781, 11.711, 11.741, 11.564, 12.129,
-           11.714, 12.078, 12.698, 11.914, 12.261, 12.134, 11.973, 12.346,
-           11.584, 12.196, 12.804, 12.519, 11.273, 11.219, 11.923, 11.91 ,
-           11.813, 11.8  , 12.446, 11.97 , 11.887, 12.174, 11.724, 11.967,
-           11.895, 11.908, 12.649, 11.942, 11.626, 11.948, 12.537, 11.532,
-           12.523, 11.874, 11.815, 12.096, 11.885, 11.651, 12.154, 11.847,
-           12.118, 12.115, 12.024, 12.262, 12.597, 12.512, 11.629, 12.04 ,
-           12.368, 11.682, 12.472, 11.833, 12.139, 12.247, 12.488, 11.881,
-           12.23 , 12.025, 11.237, 11.751, 12.396, 12.124, 11.621, 12.574,
-           12.493, 11.939, 12.647, 11.844, 12.215, 12.442, 12.153, 12.306,
-           12.581, 12.184, 11.907, 12.336, 12.56 , 11.869, 11.951, 11.657,
-           12.036, 11.59 , 12.083, 12.192, 11.811, 11.834, 11.74 , 11.649,
-           12.165, 11.821, 12.159, 12.026, 12.12 , 11.798, 13.024, 11.862,
-           11.266, 12.   , 12.903, 11.833, 11.928, 12.353, 12.164, 11.583,
-           11.419, 12.007, 11.754, 12.172, 11.726, 12.61 , 12.737, 11.286,
-           11.874, 12.095, 11.423, 11.617, 11.846, 11.861, 12.214, 12.28 ,
-           12.472, 11.996, 12.275, 11.9  , 11.704, 11.846, 11.034, 11.796,
-           11.804, 11.57 , 12.275, 11.816, 11.988, 11.636, 11.789, 11.963,
-           11.788, 11.836, 12.224, 12.803, 11.696, 11.978, 12.085, 12.37 ,
-           12.466, 12.492, 12.075, 11.737, 12.411, 11.645, 12.466, 11.468,
-           11.867, 11.888, 11.68 , 12.064, 11.569, 11.818, 11.977, 11.71 ,
-           12.191, 11.999, 11.301, 11.714, 11.672, 11.617, 12.264, 12.321,
-           11.995, 12.253, 12.15 , 11.934, 11.893, 12.212, 11.93 , 12.018,
-           12.359, 12.614, 11.641, 11.719, 11.527, 11.997, 12.36 , 12.109,
-           11.719, 12.216, 12.257, 11.591, 11.81 , 12.003, 11.673, 12.142,
-           12.123, 11.088, 11.929, 11.823, 11.045, 11.695, 12.053, 11.68 ,
-           12.845, 12.6  , 12.075, 11.77 , 11.971, 11.616, 11.525, 12.436,
-           12.391, 11.74 , 11.442, 12.085, 11.866, 11.478, 11.763, 12.199,
-           12.237, 11.382, 11.994, 12.064, 11.49 , 11.559, 11.958, 11.787,
-           12.122, 11.914, 12.008, 11.956])
-
 
 
 R² score
@@ -2440,11 +2138,11 @@ _ = plt.plot(lims,lims)
 ![png](output_69_0.png)
 
 
-#Conclusion
+# Conclusion
 
 In this project, we explore the dataset and analysts 'SalePrice' variable with the most correlated variables, we clean up missing data and outliers. We normalize data with statistics. We also converted categorical variables to numeric variables. After that, we used a Random Forest Regression model to predict house prices.
 
-#Reference
+# Reference
 
 
 [1] [Comprehensive data exploration with Python](https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python/notebook)
