@@ -12,7 +12,7 @@ toc_icon: "fas fa-list"
 
 [Link: Notebook](https://github.com/momijizen/House-Prices---Advanced-Regression-Techniques-/blob/main/House_Prices.ipynb)
 
-> House Prices Prediction
+> House Prices Prediction.
 This is a project to practice skills for data exploration and advanced regression techniques.
 
 >In this challenge, I'm using a house price dataset from the Kaggle competition and I wanted to explore the data and build a machine learning model that would predict house prices.
@@ -1202,8 +1202,8 @@ Explore each feature.
     dtypes: float64(3), int64(35), object(43)
     memory usage: 924.0+ KB
 
-
-Analyze the 'SalePrice' column. The 'Saleprice' is the reason for our forecast.
+The `Saleprice` is the reason for our forecast.
+Analyze the `SalePrice` column.
 
 
     count      1460.000000
@@ -1218,74 +1218,51 @@ Analyze the 'SalePrice' column. The 'Saleprice' is the reason for our forecast.
 
 
 
-Displays a histogram of the 'SalePrice' column.
+Displays a histogram of the `SalePrice` column.
 
 
-![png](output_13_1.png)
-
+![histogram of the 'SalePrice'](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_13_1.png)
 
     Skewness: 1.882876
     Kurtosis: 6.536282
 
 
-### Relationship with numerical variables
-
-
-![png](output_16_0.png)
-
-
-
-![png](output_17_0.png)
-
-
-### Relationship with categorical features
-
-
-![png](output_19_0.png)
-
-
-
-![png](output_20_0.png)
-
-
 ### Correlation matrix (heatmap style)
 
 
+![Correlation matrix (heatmap style)](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_22_0.png)
 
-![png](output_22_0.png)
 
-
-### 'SalePrice' correlation matrix (zoomed heatmap style)
+### `SalePrice` correlation matrix (zoomed heatmap style)
 Scatter plots between the most correlated
 
-In the 'SalePrice' correlation matrix (zoomed heat map style) I see three orange-colored squares that get my attention. The first refers to the 'TotalBsmtSF' and '1stFlrSF' variables, and the second refers to the 'GarageCar' and GarageArea variables, and the third refers to the GrLivArea and TotRmsAbvGrd variables. These cases show how significant the correlation is between these variables. We can conclude that these variables give almost the same information.
+In the `SalePrice` correlation matrix (zoomed heat map style) I see three orange-colored squares that get my attention. The first refers to the `TotalBsmtSF` and `1stFlrSF` variables, and the second refers to the `GarageCar` and `GarageArea` variables, and the third refers to the `GrLivArea` and `TotRmsAbvGrd` variables. These cases show how significant the correlation is between these variables. We can conclude that these variables give almost the same information.
+
+
+![`SalePrice` correlation matrix (zoomed heatmap style)](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_24_0.png)
 
 
 
-![png](output_24_0.png)
+According to the '`alePrice` correlation matrix, these are the variables most correlated with `SalePrice`. Therefore, I have chosen the variables to be analyzed:
+
+* `OverallQual`, `GrLivArea` ​and `TotalBsmtSF` are strongly correlated with `SalePrice`.
+* `GarageCars` and `GarageArea` are some of the most strongly correlated variables and are similar. Therefore, we need one of these variables in our analysis. That's the `GarageCars` variable.
+* `TotalBsmtSF` and `1stFloor` are also similar variables. Therefore, I keep `TotalBsmtSF`.
+* `FullBath`
+* `TotRmsAbvGrd` and `GrLivArea` are also similar variables. Therefore, I keep `GrLivArea`.
+* `YearBuilt` is slightly correlated with `SalePrice`.
 
 
-
-According to the 'SalePrice' correlation matrix, these are the variables most correlated with 'SalePrice'. Therefore, I have chosen the variables to be analyzed:
-
-* 'OverallQual', 'GrLivArea' ​and 'TotalBsmtSF' are strongly correlated with 'SalePrice'.
-* 'GarageCars' and 'GarageArea' are some of the most strongly correlated variables and are similar. Therefore, we need one of these variables in our analysis. That's the 'GarageCars' variable.
-* 'TotalBsmtSF' and '1stFloor' are also similar variables. Therefore, I keep 'TotalBsmtSF'.
-* 'FullBath'
-* 'TotRmsAbvGrd' and 'GrLivArea' are also similar variables. Therefore, I keep 'GrLivArea'.
-* 'YearBuilt' is slightly correlated with 'SalePrice'.
+### Scatter plots between `SalePrice` and correlated variables
 
 
-### Scatter plots between 'SalePrice' and correlated variables
-
-
-![png](output_27_0.png)
+![Scatter plots between `SalePrice` and correlated variables](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_27_0.png)
 
 
 ## Missing data
 
 
-Calculates the Null values for each column.
+Calculates the null values for each column.
 
 
 <div>
@@ -1416,13 +1393,11 @@ Calculates the Null values for each column.
 </div>
 
 
-
 From the sum of the calculated null values. I deleted a column with over one null value and delete one row where the Electrical column is null.
-
 
 ## Outliers
 
-![png](output_35_1.png)
+![Outliers](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_35_1.png)
 
 
 ## Normalization
@@ -1432,61 +1407,18 @@ Histogram - Kurtosis and skewness.
 Normal probability plot - Data distribution should closely follow the diagonal that represents the normal distribution.
 
 
-![png](output_40_0.png)
+![png](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_0.png)
 
 
-![png](output_40_1.png)
+![png](ttps://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_40_1.png)
+
+Applying log transformation.
+
+![png](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_42_0.png)
 
 
+![png](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_42_1.png)
 
-![png](output_42_0.png)
-
-
-
-![png](output_42_1.png)
-
-
-
-![png](output_43_0.png)
-
-
-
-![png](output_43_1.png)
-
-
-
-![png](output_45_0.png)
-
-
-
-![png](output_45_1.png)
-
-
-
-
-![png](output_46_0.png)
-
-
-
-![png](output_46_1.png)
-
-
-
-
-![png](output_49_0.png)
-
-
-
-![png](output_49_1.png)
-
-
-
-
-![png](output_50_0.png)
-
-
-
-![png](output_51_0.png)
 
 
 ##Convert categorical variable into numeric variable
@@ -2024,7 +1956,7 @@ Normal probability plot - Data distribution should closely follow the diagonal t
 # Model
 
 Random Forest Regression
-1. Identify your dependent (y) and independent variables (X)
+1. Identify your dependent (y) and independent variables (x)
 2. Split the dataset into the Training set and Test set
 3. Training the Random Forest Regression model on the whole dataset
 4. Predicting the Test set results
@@ -2033,12 +1965,12 @@ R² score : 0.8721889818394666
 The graph displays the predicted values and the actual values.
 
 
-![png](output_69_0.png)
+![the predicted values and the actual values](https://raw.githubusercontent.com/momijizen/blog/master/assets/img_house_price/output_69_0.png)
 
 
 # Conclusion
 
-In this project, we explore the dataset and analysts 'SalePrice' variable with the most correlated variables, we clean up missing data and outliers. We normalize data with statistics. We also converted categorical variables to numeric variables. After that, we used a Random Forest Regression model to predict house prices.
+In this project, we explore the dataset and analysts `SalePrice` variable with the most correlated variables, we clean up missing data and outliers. We normalize data with statistics. We also converted categorical variables to numeric variables. After that, we used a Random Forest Regression model to predict house prices.
 
 # Reference
 
