@@ -5,7 +5,7 @@ categories:
 tags:
   - Foursquare API
   - location data
-  - project
+  - ML
 header:
   image: "/assets/img/map_head.jpg"
 toc: true

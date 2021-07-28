@@ -4,7 +4,7 @@ categories:
   - Project
 tags:
   - Advanced regression
-  - project
+  - ML
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "fas fa-list"
@@ -1416,7 +1416,7 @@ Applying log transformation.
 
 
 
-##Convert categorical variable into numeric variable
+## Convert categorical variable into numeric variable
 
 
 <div>
