@@ -53,7 +53,7 @@ from sklearn.preprocessing import StandardScaler
 print(tf.__version__)
 ```
 
-##Download Dataset
+## Download Dataset
 
 
 ```python
@@ -71,8 +71,6 @@ files.upload()
 ```python
 ! kaggle competitions download -c house-prices-advanced-regression-techniques
 ```
-
-
 
 
 
@@ -1113,7 +1111,6 @@ files.upload()
 Explore each feature.
 
 
-
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 1460 entries, 0 to 1459
     Data columns (total 81 columns):
@@ -1207,9 +1204,6 @@ Explore each feature.
 Analyze the 'SalePrice' column. The 'Saleprice' is the reason for our forecast.
 
 
-
-
-
     count      1460.000000
     mean     180921.195890
     std       79442.502883
@@ -1225,7 +1219,6 @@ Analyze the 'SalePrice' column. The 'Saleprice' is the reason for our forecast.
 Displays a histogram of the 'SalePrice' column.
 
 
-
 ![png](output_13_1.png)
 
 
@@ -1236,10 +1229,7 @@ Displays a histogram of the 'SalePrice' column.
 ### Relationship with numerical variables
 
 
-
-
 ![png](output_16_0.png)
-
 
 
 
@@ -1249,10 +1239,7 @@ Displays a histogram of the 'SalePrice' column.
 ### Relationship with categorical features
 
 
-
 ![png](output_19_0.png)
-
-
 
 
 
@@ -1260,7 +1247,6 @@ Displays a histogram of the 'SalePrice' column.
 
 
 ### Correlation matrix (heatmap style)
-
 
 
 
@@ -1272,17 +1258,6 @@ Scatter plots between the most correlated
 
 In the 'SalePrice' correlation matrix (zoomed heat map style) I see three orange-colored squares that get my attention. The first refers to the 'TotalBsmtSF' and '1stFlrSF' variables, and the second refers to the 'GarageCar' and GarageArea variables, and the third refers to the GrLivArea and TotRmsAbvGrd variables. These cases show how significant the correlation is between these variables. We can conclude that these variables give almost the same information.
 
-
-
-```python
-#saleprice correlation matrix
-k = 10 #number of variables for heatmap
-cols = corrmat.nlargest(k, 'SalePrice')['SalePrice'].index
-cm = np.corrcoef(df_train[cols].values.T)
-sns.set(font_scale=1.25)
-hm = sns.heatmap(cm, cbar=True, annot=True, square=True, fmt='.2f', annot_kws={'size': 10}, yticklabels=cols.values, xticklabels=cols.values)
-plt.show()
-```
 
 
 ![png](output_24_0.png)
@@ -1302,7 +1277,6 @@ According to the 'SalePrice' correlation matrix, these are the variables most co
 ### Scatter plots between 'SalePrice' and correlated variables
 
 
-
 ![png](output_27_0.png)
 
 
@@ -1310,9 +1284,6 @@ According to the 'SalePrice' correlation matrix, these are the variables most co
 
 
 Calculates the Null values for each column.
-
-
-
 
 
 <div>
@@ -1329,7 +1300,7 @@ Calculates the Null values for each column.
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1447,15 +1418,9 @@ Calculates the Null values for each column.
 From the sum of the calculated null values. I deleted a column with over one null value and delete one row where the Electrical column is null.
 
 
-
-
 ## Outliers
 
-
-
-
 ![png](output_35_1.png)
-
 
 
 ## Normalization
@@ -1465,15 +1430,10 @@ Histogram - Kurtosis and skewness.
 Normal probability plot - Data distribution should closely follow the diagonal that represents the normal distribution.
 
 
-
 ![png](output_40_0.png)
 
 
-
 ![png](output_40_1.png)
-
-
-
 
 
 
@@ -1490,11 +1450,6 @@ Normal probability plot - Data distribution should closely follow the diagonal t
 
 
 ![png](output_43_1.png)
-
-
-
-
-
 
 
 
@@ -1516,8 +1471,6 @@ Normal probability plot - Data distribution should closely follow the diagonal t
 
 
 
-
-
 ![png](output_49_0.png)
 
 
@@ -1534,9 +1487,7 @@ Normal probability plot - Data distribution should closely follow the diagonal t
 ![png](output_51_0.png)
 
 
-##Convert categorical variable into numberic variable
-
-
+##Convert categorical variable into numeric variable
 
 
 <div>
@@ -1553,7 +1504,7 @@ Normal probability plot - Data distribution should closely follow the diagonal t
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -2070,69 +2021,14 @@ Normal probability plot - Data distribution should closely follow the diagonal t
 
 # Model
 
-## Random Forest Regression
-
-### Identify your dependent (y) and independent variables (X)
-
-
-
-
-### Split the dataset into the Training set and Test set
-
-
-```python
-x_train, x_test, y_trian, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
-```
-
-### Training the Random Forest Regression model on the whole dataset
-
-
-```python
-model = RandomForestRegressor(n_estimators=10, random_state=0)
-model.fit(x_train,y_trian)
-```
-
-
-
-
-
-### Predicting the Test set results
-
-
-```python
-y_pred= model.predict(x_test)
-y_pred
-```
-
-
-R² score
-
-
-```python
-r2_score(y_test,y_pred)
-```
-
-
-
-
-    0.8721889818394666
-
-
+Random Forest Regression
+1. Identify your dependent (y) and independent variables (X)
+2. Split the dataset into the Training set and Test set
+3. Training the Random Forest Regression model on the whole dataset
+4. Predicting the Test set results
+R² score : 0.8721889818394666
 
 The graph displays the predicted values and the actual values.
-
-
-```python
-# Plot predictions.
-
-plt.scatter(y_test,y_pred)
-plt.xlabel('True values (expenses)')
-plt.ylabel('Predictions (expenses)')
-lims = [10.5, 13.5]
-plt.xlim(lims)
-plt.ylim(lims)
-_ = plt.plot(lims,lims)
-```
 
 
 ![png](output_69_0.png)
