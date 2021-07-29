@@ -1,11 +1,11 @@
 ---
-title: "SMS Text Classification"
+title: "Neural Network SMS Text Classifier"
 categories:
   - Project
 tags:
-  - classification
+  - Classification
   - ML
-  - freeCodeCamp
+  - freeCodeCamp.org
 ---
 
 [Link: Notebook](https://github.com/momijizen/Machine-Learning-with-Python-Projects/blob/main/fcc_sms_text_classification.ipynb)

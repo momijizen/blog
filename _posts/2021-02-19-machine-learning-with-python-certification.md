@@ -4,8 +4,8 @@ date: "2021-02-19 16:10:55 +0700"
 categories:
   - Certificate
 tags:
-  - Certificate
   - freeCodeCamp.org
+  - ML
 link: https://freecodecamp.org/certification/momijizen/machine-learning-with-python-v7
 ---
 

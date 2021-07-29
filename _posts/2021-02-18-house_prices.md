@@ -3,7 +3,7 @@ title: "House Prices Prediction"
 categories:
   - Project
 tags:
-  - Advanced regression
+  - Regression
   - ML
 toc: true
 toc_label: "Table of Contents"

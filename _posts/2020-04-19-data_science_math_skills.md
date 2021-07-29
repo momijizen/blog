@@ -4,7 +4,6 @@ date: 2020-04-19
 categories:
   - Certificate
 tags:
-  - Certificate
   - Coursera
   - Duke University
 link: https://coursera.org/share/91a40f523e854b3bb528b6f39e1e3fd5
