@@ -3,7 +3,7 @@ title: "Book Recommendation Engine using KNN"
 categories:
   - Project
 tags:
-  - Regression
+  - KNN
   - ML
   - freeCodeCamp.org
 ---
