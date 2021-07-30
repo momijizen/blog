@@ -8,11 +8,11 @@ tags:
 
 [Link: Notebook](https://github.com/momijizen/boilerplate-sea-level-predictor/blob/main/sea_level_predictor.ipynb)
 
-# The Sea-Level Change Prediction
+># The Sea-Level Change Prediction
 
-We will analyze the global average sea-level change dataset since 1880 and use the data to forecast sea-level change through the year 2050.
+>We will analyze the global average sea-level change dataset since 1880 and use the data to forecast sea-level change through the year 2050.
 
-We import the dataset used from https://datahub.io/core/sea-level-rise
+>We import the dataset used from https://datahub.io/core/sea-level-rise
 
 Import libraries
 
