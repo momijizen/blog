@@ -1,6 +1,6 @@
 ---
 title: "Dashboard"
-my_html: Dash.mhtml
+my_html: Dash.html
 categories:
   - Blog
 tags:
