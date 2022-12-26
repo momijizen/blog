@@ -1,0 +1,9 @@
+Develop Interactive Dashboard Application for visualize data  from Thomas's database. (Purchase and Actual Production), and edit SQL for BI Thomas Report.
+Develop OCT web applications (WS & Rule functional) and edit stock card and inventory balance reports.
+Develop OCT web applications (Training Course Management functional) and create Stocktaking Item Set Report.
+Develop OCT web applications (Employee and Mistakes Management functional) and create Teknia In-Out Check Report.
+Develop OCT web applications (Employee and Mistakes Management functional) and create Teknia In-Out Check Report.
+Develop OCT web applications (Work Leave and Drawing functional) 
+Develop OCT web application (QRAP function) and Testing all functionals of OCT web application.
+
+
